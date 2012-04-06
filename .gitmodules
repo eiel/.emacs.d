@@ -1,0 +1,96 @@
+[submodule "bundle/yasnippet"]
+	path = bundle/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "bundle/anything-hatena-bookmark"]
+	path = bundle/anything-hatena-bookmark
+	url = git://github.com/k1LoW/anything-hatena-bookmark.git
+[submodule "bundle/anything-project"]
+	path = bundle/anything-project
+	url = git://github.com/imakado/anything-project.git
+[submodule "bundle/auto-complete"]
+	path = bundle/auto-complete
+	url = git://github.com/m2ym/auto-complete.git
+[submodule "bundle/coffee-mode"]
+	path = bundle/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git
+[submodule "bundle/direx-el"]
+	path = bundle/direx-el
+	url = git://github.com/m2ym/direx-el.git
+[submodule "bundle/egg"]
+	path = bundle/egg
+	url = git://github.com/bogolisk/egg.git
+[submodule "bundle/egit"]
+	path = bundle/egit
+	url = git://github.com/jimhourihan/egit.git
+[submodule "bundle/emacs-cake"]
+	path = bundle/emacs-cake
+	url = git://github.com/k1LoW/emacs-cake.git
+[submodule "bundle/emacs-smartchr"]
+	path = bundle/emacs-smartchr
+	url = git://github.com/imakado/emacs-smartchr.git
+[submodule "bundle/expand-region.el"]
+	path = bundle/expand-region.el
+	url = git://github.com/magnars/expand-region.el.git
+[submodule "bundle/ghc-mod"]
+	path = bundle/ghc-mod
+	url = git://github.com/kazu-yamamoto/ghc-mod.git
+[submodule "bundle/git-commit-mode"]
+	path = bundle/git-commit-mode
+	url = git://github.com/rafl/git-commit-mode.git
+[submodule "bundle/git-emacs"]
+	path = bundle/git-emacs
+	url = git://github.com/tsgates/git-emacs.git
+[submodule "bundle/gitsum"]
+	path = bundle/gitsum
+	url = git://github.com/chneukirchen/gitsum.git
+[submodule "bundle/jade-mode"]
+	path = bundle/jade-mode
+	url = git://github.com/brianc/jade-mode.git
+[submodule "bundle/jaunte"]
+	path = bundle/jaunte
+	url = git://github.com/kawaguchi/jaunte.el.git
+[submodule "bundle/lingr-el"]
+	path = bundle/lingr-el
+	url = http://github.com/lugecy/lingr-el.git
+[submodule "bundle/magit"]
+	path = bundle/magit
+	url = git://github.com/magit/magit.git
+[submodule "bundle/markdown-mode"]
+	path = bundle/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
+[submodule "bundle/mediawiki"]
+	path = bundle/mediawiki
+	url = /Users/eiel/Programming/elisp/mediawiki
+[submodule "bundle/org-mode"]
+	path = bundle/org-mode
+	url = git://repo.or.cz/org-mode.git
+[submodule "bundle/popup-el"]
+	path = bundle/popup-el
+	url = git://github.com/m2ym/popup-el.git
+[submodule "bundle/popwin-el"]
+	path = bundle/popwin-el
+	url = git://github.com/m2ym/popwin-el.git
+[submodule "bundle/rhtml"]
+	path = bundle/rhtml
+	url = git://github.com/eschulte/rhtml.git
+[submodule "bundle/ri-emacs"]
+	path = bundle/ri-emacs
+	url = git://github.com/pedz/ri-emacs.git
+[submodule "bundle/rinari"]
+	path = bundle/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "bundle/rspec-mode"]
+	path = bundle/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
+[submodule "bundle/rvm.el"]
+	path = bundle/rvm.el
+	url = git://github.com/senny/rvm.el.git
+[submodule "bundle/twittering-mode"]
+	path = bundle/twittering-mode
+	url = git://github.com/hayamiz/twittering-mode.git
+[submodule "bundle/undo-tree"]
+	path = bundle/undo-tree
+	url = http://www.dr-qubit.org/git/undo-tree.git
+[submodule "bundle/yaml-mode"]
+	path = bundle/yaml-mode
+	url = git://github.com/yoshiki/yaml-mode.git
