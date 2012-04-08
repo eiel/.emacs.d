@@ -94,3 +94,6 @@
 [submodule "bundle/yaml-mode"]
 	path = bundle/yaml-mode
 	url = git://github.com/yoshiki/yaml-mode.git
+[submodule "bundle/auto-complete-clang"]
+	path = bundle/auto-complete-clang
+	url = git://github.com/brianjcj/auto-complete-clang.git

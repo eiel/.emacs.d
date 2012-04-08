@@ -37,8 +37,6 @@
 (add-hook 'c-mode-common-hook
          '(lambda()
              (c-set-style "cc-mode")))
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
 
 (defun smartchr-custom-keybindings ()
   (local-set-key (kbd "=") (smartchr '(" = " " == "  "=")))
@@ -63,11 +61,6 @@
 ;; objc-mode で補完候補を設定
 (setq ac-modes (append ac-modes '(objc-mode)))
 ;; hook
-(add-hook 'objc-mode-hook
-         (lambda ()
-           ;; XCode を利用した補完を有効にする
-           (push 'ac-source-company-xcode ac-sources)
-         ))
 
 ;; (require 'flymake)
 ;; (defvar xcode:gccver "4.0")
@@ -129,3 +122,19 @@
     "    end tell \r"
     "end tell \r"
     ))))
+
+;;; auto-complete-clang
+(require 'auto-complete-clang)
+(defun my-ac-config ()
+  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+  (add-hook 'css-mode-hook 'ac-css-mode-setup)
+  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+  (global-auto-complete-mode t))
+(defun my-ac-cc-mode-setup ()
+  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet ac-source-template) ac-sources)))
+(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; ac-source-gtags
+(my-ac-config)
