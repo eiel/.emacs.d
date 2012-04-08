@@ -132,10 +132,30 @@
 
 (require 'ido)
 
-
+
+;;; direx
 (require 'direx)
 (require 'direx-project)
+
+(setq direx:leaf-icon "  "
+      direx:open-icon "▾ "
+      direx:closed-icon "▸ ")
+
+(defun my-direx:jump-to-directory-other-window ()
+  (interactive)
+  (condition-case error
+      (direx-project:jump-to-project-root-other-window)
+    ('error
+     (let ((message (error-message-string error)))
+       (if (equal "Project root not found" message)
+           (direx:jump-to-directory-other-window)
+         (error message))))))
+
+(global-set-key (kbd "C-x d") 'my-direx:jump-to-directory-other-window)
+
+(require 'popwin)
 (push '(direx:direx-mode :position left :width 25 :dedicated t)
       popwin:special-display-config)
-
-(global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root-other-window)
+(let ((map direx:direx-mode-map))
+  (define-key map (kbd "N") 'direx:next-sibling-item)
+  (define-key map (kbd "P") 'direx:previous-sibling-item))
