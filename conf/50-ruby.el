@@ -5,8 +5,6 @@
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Ocmgen" . ruby-mode))
 
-(add-to-list 'exec-path " ~/.rbenv/versions/1.9.3-p125/bin")
-
 (defun ruby-mode-hook-init ()
   "encodingを自動挿入しないようにする"
   (remove-hook 'before-save-hook 'ruby-mode-set-encoding)
@@ -43,16 +41,6 @@
 ;;; rubydb
 ;; (install-elisp "http://svn.ruby-lang.org/repos/ruby/trunk/misc/rubydb3x.el")
 (autoload 'rubydb "rubydb3x" "ruby debug t")
-
-;;; rspec-mode
-;; 依存 mode-compile.el
-;; (install-elisp "http://perso.tls.cena.fr/boubaker/distrib/mode-compile.el")
-(autoload 'mode-compile "mode-compile"
-  "Command to compile current buffer file based on the major mode" t)
-;; (global-set-key "\C-cc" 'mode-compile)
-(autoload 'mode-compile-kill "mode-compile"
-  "Command to kill a compilation launched by `mode-compile'" t)
-;; (global-set-key "\C-ck" 'mode-compile-kill)
 
 ;;; auto-installによってインストールした elisp の設定
 ;; (install-elisp-from-emacswiki "ruby-block.el")
@@ -117,7 +105,10 @@
 ;; (add-hook 'rhtml-mode-hook
 ;;           (lambda () (rinari-launch)))
 
-;; (require 'rspec-mode)
+(require 'rspec-mode)
+(setq rspec-use-rake-flag nil)
+(setq rspec-use-bundler-when-possible nil)
+
 
 ;;; rbenv
 (setq rbenv-path "~/.rbenv")
