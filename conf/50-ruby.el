@@ -118,3 +118,22 @@
 ;;           (lambda () (rinari-launch)))
 
 ;; (require 'rspec-mode)
+
+;;; rbenv
+(setq rbenv-path "~/.rbenv")
+(setq rbenv-command (concat (expand-file-name rbenv-path) "/bin/rbenv"))
+(setq rbenv-shims-path (concat (expand-file-name rbenv-path) "/shims"))
+(setq rbenv-bin-path (concat (expand-file-name rbenv-path) "/bin"))
+
+;; util
+(defun rbenv-add-to-list (list-var element)
+  "必ず先頭に要素を追加する `add-to-list` 要素がある場合は先頭に移動する"
+  (set list-var (cons element (remove element (symbol-value list-var)))))
+
+;; command
+(defun rbenv-reset-exec-path ()
+  (interactive)
+  (rbenv-add-to-list 'exec-path rbenv-bin-path)
+  (rbenv-add-to-list 'exec-path rbenv-shims-path)
+  (setenv "PATH" (mapconcat 'identity exec-path ":")))
+(rbenv-reset-exec-path)
