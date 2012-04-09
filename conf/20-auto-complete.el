@@ -3,16 +3,14 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 (define-key ac-mode-map  [(control tab)] 'auto-complete)
+
+(set-default 'ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 ;; (require 'ac-company)
-;; (ac-config-default)
 
 ;; (define-key ac-complete-mode-map "\C-n" 'ac-next)
 ;; (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 ;; (setq ac-auto-start 2)
 ;; (setq ac-auto-show-menu 1)
-;; (setq ac-dwin t)
-;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-;; (set-default 'ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-words-in-same-mode-buffers ac-source-words-in-buffer ac-source-filename))
 
 ;; ;;; http://d.hatena.ne.jp/kitokitoki/20101205/p2#
 ;; (defun my-ac-look ()
