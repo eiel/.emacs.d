@@ -11,3 +11,4 @@
 
 ;; 数値-*.el を数値順に読みこむ
 (my-load-conf-file "~/.emacs.d/conf")
+(setenv "PATH" (mapconcat 'identity exec-path ":"))
