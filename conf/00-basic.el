@@ -51,20 +51,15 @@
       (set-frame-parameter nil 'fullscreen nil)
     (set-frame-parameter nil 'fullscreen 'fullboth)))
 
-;;yasnippet
-;; (setq yas/root-directory "~/.emacs.d/snippets")
-;; (yas/load-directory yas/root-directory)
-;; (auto-install-from-url "http://svn.coderepos.org/share/lang/elisp/anything-c-yasnippet/anything-c-yasnippet.el")
+;;; yasnippet
 (require 'yasnippet)
-;; (setq yas/snippet-dirs '("~/.emacs.d/snippets"
-;;                          "~/.emacs.d/from_git/yasnippet/extras/imported"))
+(setq yas/snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/bundle/yasnippet/extras/imported" "~/.emacs.d/bundle/yasnippet/snippets"))
 (yas/global-mode 1)
 (setq yas/use-menu nil)
+(setq yas/trigger-key nil)
 ;; (require 'anything-c-yasnippet)
 ;; (setq anything-c-yas-space-match-any-greedy t) ;[default: nil]
 ;; (global-set-key (kbd "C-c y") 'anything-c-yas-complete)
-;; (add-to-list 'yas/extra-mode-hooks 'ruby-mode-hook)
-;; (add-to-list 'yas/extra-mode-hooks 'cperl-mode-hook)
 
 
 ;; ediff
