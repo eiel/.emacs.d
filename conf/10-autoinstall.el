@@ -230,3 +230,8 @@
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'ielm-mode-hook 'enable-paredit-mode)
+
+;; (auto-install-from-emacswiki "auto-async-byte-compile.el")
+(setq auto-async-byte-compile-exclude-files-regexp "~/junk/")
+(require 'auto-async-byte-compile)
+(add-hook 'emacs-lisp-mode-hook 'auto-async-byte-compile-mode)
