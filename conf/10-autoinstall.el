@@ -215,3 +215,7 @@
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; (auto-install-from-emacswiki "open-junk-file.el")
+(require 'open-junk-file)
+(global-set-key (kbd "C-x C-z") 'open-junk-file)
