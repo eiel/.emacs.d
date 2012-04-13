@@ -235,3 +235,8 @@
 (setq auto-async-byte-compile-exclude-files-regexp "~/junk/")
 (require 'auto-async-byte-compile)
 (add-hook 'emacs-lisp-mode-hook 'auto-async-byte-compile-mode)
+
+;; (auto-install-from-emacswiki "el-mock.el")
+;; (auto-install-from-emacswiki "el-expectations.el")
+(require 'el-mock)
+(require 'el-expectations)
