@@ -20,8 +20,8 @@
 ;;; 新規フレームのデフォルト設定
 (setq default-frame-alist
       (append
-       '((width  . 80)	; フレーム幅(文字数)
- 	 (height . 52))	; フレーム高(文字数)
+       '((width  . 80)  ; フレーム幅(文字数)
+         (height . 52))     ; フレーム高(文字数)
        default-frame-alist))
 ;; (add-to-list 'default-frame-alist '(alpha . 90))
 
@@ -36,14 +36,14 @@
 
 (when (require 'session nil t)
   (setq session-initialize '(de-saveplace session keys menus)
-	session-globals-include '((kill-ring 50)
-				  (session-file-alist 100 t)
-				  (file-name-history 100)))
+        session-globals-include '((kill-ring 50)
+                                  (session-file-alist 100 t)
+                                  (file-name-history 100)))
   (add-hook 'after-init-hook 'session-initialize))
 (global-hi-lock-mode t)
 
 
-;(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 (defun mac-toggle-max-window ()
   (interactive)
@@ -90,32 +90,32 @@
 (defadvice dabbrev-expand (around jword (arg) activate)
   (interactive "*P")
   (let* ((regexp dabbrev-abbrev-char-regexp)
-	 (dabbrev-abbrev-char-regexp regexp)
-	 char ch)
+         (dabbrev-abbrev-char-regexp regexp)
+         char ch)
     (if (bobp)
-	()
+        ()
       (setq char (char-before)
-	    ch (char-to-string char))
+            ch (char-to-string char))
       (cond
-        ;; ァ～ヶの文字にマッチしてる時はァ～ヶが単語構成文字とする
-        ((string-match "[ァ-ヶー]" ch)
-         (setq dabbrev-abbrev-char-regexp "[ァ-ヶー]"))
-        ((string-match "[ぁ-んー]" ch)
-         (setq dabbrev-abbrev-char-regexp "[ぁ-んー]"))
-        ((string-match "[亜-瑤]" ch)
-         (setq dabbrev-abbrev-char-regexp "[亜-瑤]"))
-        ;; 英数字にマッチしたら英数字とハイフン(-)を単語構成文字とする
-        ((string-match "[A-Za-z0-9]" ch)
-;;         (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9]"))
-         (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9-]")) ; modified by peccu
-        ((eq (char-charset char) 'japanese-jisx0208)
-         (setq dabbrev-abbrev-char-regexp
-               (concat "["
-                       (char-to-string (make-char 'japanese-jisx0208 48 33))
-                       "-"
-                       (char-to-string (make-char 'japanese-jisx0208 126 126))
-                       "]")))))
-     ad-do-it))
+       ;; ァ～ヶの文字にマッチしてる時はァ～ヶが単語構成文字とする
+       ((string-match "[ァ-ヶー]" ch)
+        (setq dabbrev-abbrev-char-regexp "[ァ-ヶー]"))
+       ((string-match "[ぁ-んー]" ch)
+        (setq dabbrev-abbrev-char-regexp "[ぁ-んー]"))
+       ((string-match "[亜-瑤]" ch)
+        (setq dabbrev-abbrev-char-regexp "[亜-瑤]"))
+       ;; 英数字にマッチしたら英数字とハイフン(-)を単語構成文字とする
+       ((string-match "[A-Za-z0-9]" ch)
+        ;;         (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9]"))
+        (setq dabbrev-abbrev-char-regexp "[A-Za-z0-9-]")) ; modified by peccu
+       ((eq (char-charset char) 'japanese-jisx0208)
+        (setq dabbrev-abbrev-char-regexp
+              (concat "["
+                      (char-to-string (make-char 'japanese-jisx0208 48 33))
+                      "-"
+                      (char-to-string (make-char 'japanese-jisx0208 126 126))
+                      "]")))))
+    ad-do-it))
 
 (setq show-paren-style 'mixed)
 
@@ -154,3 +154,12 @@
 (let ((map direx:direx-mode-map))
   (define-key map (kbd "N") 'direx:next-sibling-item)
   (define-key map (kbd "P") 'direx:previous-sibling-item))
+
+(defun my-indent ()
+  (interactive)
+  (whitespace-mode)
+  (indent-region 0 (buffer-size (current-buffer)))
+  (untabify 0 (buffer-size (current-buffer)))
+  )
+
+(global-set-key "\C-ct" 'my-indent)
