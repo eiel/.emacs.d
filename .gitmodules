@@ -97,3 +97,6 @@
 [submodule "bundle/auto-complete-clang"]
 	path = bundle/auto-complete-clang
 	url = git://github.com/brianjcj/auto-complete-clang.git
+[submodule "bundle/evil"]
+	path = bundle/evil
+	url = git://gitorious.org/evil/evil.git

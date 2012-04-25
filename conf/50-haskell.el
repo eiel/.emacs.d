@@ -13,7 +13,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
-(add-to-list 'load-path "~/.emacs.d/from_git/ghc-mod/elisp")
+(add-to-list 'load-path "~/.emacs.d/bundle/ghc-mod/elisp")
 (add-to-list 'exec-path "~/.cabal/bin")
 (autoload 'ghc-init "ghc" nil t)
 
