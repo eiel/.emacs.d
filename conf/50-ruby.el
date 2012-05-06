@@ -128,3 +128,11 @@
   (rbenv-add-to-list 'exec-path rbenv-shims-path)
   (setenv "PATH" (mapconcat 'identity exec-path ":")))
 (rbenv-reset-exec-path)
+
+(setq feature-default-language "ja")
+;; point to cucumber languages.yml or gherkin i18n.yml to use
+;; exactly the same localization your cucumber uses
+;(setq feature-default-i18n-file "/path/to/gherkin/gem/i18n.yml")
+;; and load it
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))

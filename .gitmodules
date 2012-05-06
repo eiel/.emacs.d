@@ -100,3 +100,6 @@
 [submodule "bundle/evil"]
 	path = bundle/evil
 	url = git://gitorious.org/evil/evil.git
+[submodule "bundle/cucumber"]
+	path = bundle/cucumber
+	url = git://github.com/michaelklishin/cucumber.el.git
