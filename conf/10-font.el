@@ -53,7 +53,7 @@
   (my-set-default-font "Menlo")
   (my-set-default-font-size 110)
   ;; (my-set-default-font-size 240)
-  (my-set-jp-default-font "Hiragino Kaku Gothic Pro")
+  (my-set-jp-default-font "Hiragino Maru Gothic Pro")
   (setq face-font-rescale-alist
         '(("^-apple-hiragino.*" . 1.3)
           (".*osaka-bold.*" . 1.2)
