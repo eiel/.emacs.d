@@ -1,7 +1,8 @@
 ;;; anything.el の基本プラグインの設定
 ;; (auto-install-batch "auto-install")
 
-(load "anything-startup.el")
+;; (load "anything-startup.el")
+(require 'anything-config)
 (setq anything-c-filelist-file-name "/tmp/all.filelist")
 (setq anything-grep-candidates-fast-directory-regexp "^/tmp")
 ;; (define-key global-map (kbd "C-.") 'anything)
