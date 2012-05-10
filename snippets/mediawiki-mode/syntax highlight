@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: syntax highlight
+# key: code
+# --
+<syntaxhighlight lang="$0">
+$1
+</syntaxhighlight>
