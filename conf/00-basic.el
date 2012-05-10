@@ -163,3 +163,12 @@
   )
 
 (global-set-key "\C-ct" 'my-indent)
+
+;; Gentoo Prefix
+(require 'cl)
+(defvar gentoo-prefix-path "~/Gentoo")
+(when  (file-directory-p gentoo-prefix-path)
+  (let ((paths '("/usr/bin" "/bin"))
+        (prefix (expand-file-name gentoo-prefix-path)))
+    (loop for path in paths
+          do (add-to-list 'exec-path path))))
