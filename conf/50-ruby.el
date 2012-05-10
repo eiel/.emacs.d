@@ -110,6 +110,24 @@
 (setq rspec-use-bundler-when-possible nil)
 
 
+;;; rails_best_practice
+(defvar rails-best-practices:buffer-name "*Rails Best Practices*")
+(defun rails-best-practices:exec ()
+  (interactive)
+  (let ((process
+         (start-process-shell-command
+          "rails_best_practices"
+          rails-best-practices:buffer-name
+          (concat "rails_best_practices " (rinari-root) " --without-color --silent"))))
+    (with-current-buffer (get-buffer rails-best-practices:buffer-name)
+      (compilation-mode))
+    (set-process-sentinel process 'rails-best-practices:callback)))
+
+(defun rails-best-practices:callback (process event)
+  (with-current-buffer (get-buffer rails-best-practices:buffer-name)
+    (beginning-of-buffer)))
+
+
 ;;; rbenv
 (setq rbenv-path "~/.rbenv")
 (setq rbenv-command (concat (expand-file-name rbenv-path) "/bin/rbenv"))
