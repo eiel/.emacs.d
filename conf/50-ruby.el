@@ -110,6 +110,11 @@
 (setq rspec-use-bundler-when-possible nil)
 
 
+;; autotest
+;; (auto-install-from-emacswiki "autotest.el")
+(require 'autotest)
+
+
 ;;; rails_best_practice
 (defvar rails-best-practices:buffer-name "*Rails Best Practices*")
 (defun rails-best-practices:exec ()
