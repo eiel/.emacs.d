@@ -152,6 +152,8 @@
   (setenv "PATH" (mapconcat 'identity exec-path ":")))
 (rbenv-reset-exec-path)
 
+
+;;; cucumber
 (setq feature-default-language "ja")
 ;; point to cucumber languages.yml or gherkin i18n.yml to use
 ;; exactly the same localization your cucumber uses
