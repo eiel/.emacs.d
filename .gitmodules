@@ -103,3 +103,6 @@
 [submodule "bundle/cucumber"]
 	path = bundle/cucumber
 	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule "bundle/helm"]
+	path = bundle/helm
+	url = git://github.com/emacs-helm/helm.git
