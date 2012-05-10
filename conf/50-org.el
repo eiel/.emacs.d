@@ -27,3 +27,7 @@
       org-agenda-todo-ignore-deadlines t)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/org-mode/contrib/lisp/"))
+
+(setq org-hide-leading-stars t)
+(setq org-odd-levels-only t)
+(setq org-startup-indented t)
